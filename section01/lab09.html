@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // A를 #으로
+        function solution(s) {
+            let answer = "";
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] == 'A') answer += '#';
+                else answer += s[i];
+            }
+            return answer;
+        }
+
+        let str = "BANANA";
+        console.log(solution(str));
+
+        // // Sol 1. + 연산자 사용
+        // function solution(s){
+        //     let answer="";
+        //     for(let x of s){
+        //         if(x=='A') answer+='#';
+        //         else answer+=x;
+        //     }
+        //     return answer;
+        // }
+
+        // // Sol 2. replace 사용
+        // function solution(s){
+        //     let answer=s;
+        //     answer = answer.replace(/A/g, '#');  // /A/는 A에 대한 정규식, g는 global 즉 전체에서 찾아라 (g를 안 쓰면 맨 처음 A만 #d으로 바뀜)
+        //     return answer;
+        // }
+    </script>
+</body>
+
+</html>
