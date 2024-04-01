@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 15] 가운데 문자 출력
+        function solution(s) {
+            let answer, center = Math.floor(s.length / 2);
+            if (s.length % 2 == 0) answer = s[center - 1] + s[center]; // 짝수인 경우
+            else answer = s[center];
+            return answer;
+        }
+        console.log(solution("study"));
+        console.log(solution("JavaScript"));
+    </script>
+</body>
+
+</html>
