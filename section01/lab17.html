@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 17] 중복 단어 제거 
+
+        // 방법 (1): indexOf만 이용하기
+        function solution(s) {
+            let answer = [];
+            for (let i = 0; i < s.length; i++) {
+                if (s.indexOf(s[i]) === i) answer.push(s[i]);
+            }
+            return answer;
+        }
+
+        // 방법 (2): filter 이용하기
+        // filter()에 대해서
+        // - 배열의 각 요소를 순회하며 함수를 적용하고 참인 배열을 반환한다.
+        // - 기본적으로 function callback(v, i, arr)를 받으며, v는 배열의 각 요소 값, i는 index, arr는 filter를 호출한 배열을 의미한다.
+        // - 여기서는 s가 미리 정의되어 있기 때문에 따로 arr 매개변수로 받아올 필요가 없다.
+        // 때문에 나머지 v와 i만 매개변수로 받아와 활용한 것
+
+        function solution(s) {
+            let answer;
+            answer = s.filter(function (v, i) {
+                return s.indexOf(v) === i;
+            });
+            return answer;
+        }
+
+        let str = ["good", "time", "good", "time", "student"];
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>
