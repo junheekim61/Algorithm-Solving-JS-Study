@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 4] 점수 계산
+        function solution(arr) {
+            let answer = 0;
+            let back_score = 0, score = 0;
+            // 첫 번째 점수일 때
+            if (arr[0] == 1) score = 1;
+            answer += score;
+            // 두 번째 점수부터...
+            for (let i = 1; i < arr.length; i++) {
+                back_score = score;
+                if (arr[i] == 1 && back_score > 0) score = back_score + 1;
+                else score = 0;
+                answer += score;
+            }
+            return answer;
+        }
+
+        let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>
