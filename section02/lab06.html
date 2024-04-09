@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 6]: 격자판 최대합
+        function solution(arr) {
+            let sumList = [], answer = 0;
+
+            // row별 합
+            for (let i = 0; i < arr.length; i++) {
+                let rowSum = 0;
+                for (let j = 0; j < arr.length; j++) rowSum += arr[i][j];
+                sumList.push(rowSum);
+                rowSum = 0;
+            }
+
+            // col별 합
+            for (let i = 0; i < arr.length; i++) {
+                let colSum = 0;
+                for (let j = 0; j < arr.length; j++) colSum += arr[j][i];
+                sumList.push(colSum);
+                rowSum = 0;
+            }
+
+            // 왼쪽 대각선 합
+            let LdiaSum = 0;
+            for (let j = 0; j < arr.length; j++) LdiaSum += arr[j][j];
+            sumList.push(LdiaSum);
+            LdiaSum = 0;
+
+            // 오른쪽 대각선 합
+            let RdiaSum = 0;
+            for (let j = 0; j < arr.length; j++) RdiaSum += arr[j][j];
+            sumList.push(RdiaSum);
+            RdiaSum = 0;
+
+            // 합들 중 최댓값 구하기
+            for (let x of sumList) {
+                if (x > answer) answer = x;
+            }
+
+            return answer;
+        }
+
+
+        let arr = [
+            [10, 13, 10, 12, 15],
+            [12, 39, 30, 23, 11],
+            [11, 25, 50, 53, 15],
+            [19, 27, 29, 37, 27],
+            [19, 13, 30, 13, 19]
+        ];
+        console.log(solution(arr));
+    </script>
+</body>
+
+</html>
