@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 3-1] 회문문자열
+        function solution(s) {
+            let answer;
+            if (s[0].toLowerCase() == s[s.length - 1].toLowerCase()) answer = "Yes";
+            else answer = "No";
+            return answer;
+        }
+
+        let string = "goooG";
+        console.log(solution(string));
+    </script>
+</body>
+
+</html>
