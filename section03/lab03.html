@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 3-3] 숫자만 추출
+        function solution(str) {
+            let answer = "";
+            for (let x of str) {
+                if (/[0-9]/.test(x)) answer += x;
+            }
+            return parseInt(answer);
+        }
+
+        let str = "g0en2T0s8eSoft";
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>
