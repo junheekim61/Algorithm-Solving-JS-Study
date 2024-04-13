@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        // [문제 3-4] 가장 짧은 문자거리
+        function solution(s, t) {
+            let answer = Array(s.length).fill(0);
+            tList = [];
+            for (let index in s) if (s[index] == t) tList.push(parseInt(index));
+            let idx = 0;
+            for (let i = 0; i < s.length; i++) {
+                answer[i] = Math.min(...tList.map(x => Math.abs(x - i)));
+            }
+            return answer;
+        }
+
+        let str = "teachermode";
+        console.log(solution(str, 'e'));
+    </script>
+</body>
+
+</html>
