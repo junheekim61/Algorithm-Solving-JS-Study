@@ -17,6 +17,7 @@ function solution(board, moves) {
             toyList.pop();
           }
         }
+        
         console.log(toyList);
         break;
       }
