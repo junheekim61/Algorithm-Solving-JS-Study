@@ -1,22 +1,21 @@
 // LRU
 function solution(size, arr) {
-  let answer = Array.from({ length: size }, () => 0);
-  arr.forEach((x) => {
-    let pos = -1;
-    for (let i = 0; i < size; i++) if (x === answer[i]) pos = i;
-    if (pos === -1) {
-      for (let i = size - 1; i >= 1; i--) {
-        answer[i] = answer[i - 1];
-      }
+  let cache = [];
+  for (let x of arr) {
+    if (cache.includes(x)) {
+      cache.splice(cache.indexOf(x), 1);
+      cache.unshift(x);
     } else {
-      for (let i = pos; i >= 1; i--) {
-        answer[i] = answer[i - 1];
+      if (cache.length < size) {
+        cache.unshift(x);
+      } else {
+        cache.unshift(x);
+        cache.pop();
       }
     }
-    answer[0] = x;
-  });
-
-  return answer;
+    console.log(cache);
+  }
+  return cache;
 }
 
 let arr = [1, 2, 3, 2, 6, 2, 3, 5, 7];
